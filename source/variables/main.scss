@@ -1,0 +1,27 @@
+@import './_fonts.scss';
+@import './_colors.scss';
+
+// IMPORTED VARIABLES
+
+// - MAIN
+$gap: $_t--line-height;
+
+// - FONTS
+$font-line: $_t--line-height;
+$font-size: $_t--font-size;
+$font-sans: $_t--font-family-sans;
+$font-serif: $_t--font-family-serif;
+$font-mono: $_t--font-family-mono;
+$font-bold: $_t--font-weight-bold;
+
+$font-size-h1: $font-size * 2.25;
+$font-size-h2: $font-size * 1.875;
+$font-size-h3: $font-size * 1.5;
+$font-size-h4: $font-size * 1.25;
+$font-size-h5: $font-size * 1;
+$font-size-h6: $font-size * 1;
+
+// - COLORS
+$color-base: $_t--color-default;
+$color-highlight: $_t--color-highlight;
+$color-accent: $_t--color-accent;
