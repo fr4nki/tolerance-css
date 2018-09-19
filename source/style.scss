@@ -1,9 +1,7 @@
 // GLOBAL VARIABLES
 @import './variables/main.scss';
 
-// THEME
-@import './themes/default.scss';
-
 // STYLES
 @import './stylesheets/base.scss';
+@import './stylesheets/basic.scss';
 @import './stylesheets/headers.scss';
