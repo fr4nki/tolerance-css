@@ -1,0 +1,11 @@
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $gap / 2;
+
+    &.t-no {
+        &-round {
+            border-radius: 0;
+        }
+    }
+}

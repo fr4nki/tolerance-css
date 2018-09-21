@@ -1,0 +1,35 @@
+@mixin t-unordered-list($margin: 0, $bullet: '\2013') {
+    margin: $margin;
+    list-style: none;
+    padding-left: $font-size;
+
+    li {
+        &:before {
+            content: $bullet;
+            display: inline-block;
+            text-align: center;
+            width: $font-size * 1.5;
+            margin-right: $font-size / 2;
+        }
+    }
+}
+
+@mixin t-ordered-list($margin: 0) {
+    margin: $margin;
+    list-style: none;
+    padding-left: $font-size;
+    counter-reset: listCounter;
+
+    li {
+        counter-increment: listCounter;
+
+        &:before {
+            display: inline-block;
+            text-align: center;
+            font-family: $font-mono;
+            width: auto;
+            margin-right: $font-size / 2;
+            content: counters(listCounter, ".");
+        }
+    }
+}
