@@ -6,7 +6,7 @@
     var gridContainer = document.getElementById('debug-grid-container');
 
     var generateGrid = function(){
-        var gridSize = 16;
+        var gridSize = 14;
         var bodyHeight = document.body.offsetHeight;
         var linesCount = parseInt(bodyHeight / gridSize, 10);
 

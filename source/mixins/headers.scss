@@ -1,14 +1,13 @@
-@function topOffset($fontSize, $lineHeight, $gapsCounter) {
+@function _t--header-font-offset($fontSize, $lineHeight, $gapsCounter) {
     $fontHeight: $fontSize * $lineHeight;
     $toTopClosestGapLine: $fontHeight % $gap;
     @return $gapsCounter * $gap + $toTopClosestGapLine;
 }
 
-//
 @mixin t-header($fontSize, $gapTop, $gapBottom, $lineHeight: 1.166666667) {
     font-size: $fontSize;
     font-weight: $font-bold;
     line-height: $lineHeight * $fontSize;
-    margin-top: topOffset($fontSize, $lineHeight, $gapTop);
+    margin-top: _t--header-font-offset($fontSize, $lineHeight, $gapTop);
     margin-bottom: $gapBottom * $gap;
 }

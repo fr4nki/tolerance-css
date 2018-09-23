@@ -13,13 +13,13 @@ h2,
 h3,
 .t-h3
 {
-    @include t-header($font-size-h3, 1.5, 1);
+    @include t-header($font-size-h3, 1, 0.5);
 }
 
 h4,
 .t-h4
 {
-    @include t-header($font-size-h4, 1.5, 1);
+    @include t-header($font-size-h4, 1.5, 0.5);
 }
 
 h5,
@@ -27,5 +27,5 @@ h5,
 h6
 .t-h6,
 {
-    @include t-header($font-size-h3, 1, 1);
+    @include t-header($font-size-h5, 1, 0.5);
 }

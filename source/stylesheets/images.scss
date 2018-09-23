@@ -2,10 +2,49 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: $gap / 2;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: $gap;
+    margin-bottom: $gap;
+
+    &.t-image {
+        &-left {
+            @include t-image-is-left();
+        }
+
+        &-right {
+            @include t-image-is-right();
+        }
+
+        &-center {
+            @include t-image-is-center();
+        }
+    }
 
     &.t-no {
         &-round {
             border-radius: 0;
         }
+    }
+}
+
+figure {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    margin: $gap 0;
+
+    img {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    figcaption {
+        font-size: $font-size-small;
     }
 }
