@@ -2,11 +2,8 @@
     margin: $margin;
     list-style: none;
     padding-left: $font-size;
-
-    li
-    {
-        &:before
-        {
+    li {
+        &:before {
             content: $bullet;
             display: inline-block;
             text-align: center;
@@ -21,19 +18,39 @@
     list-style: none;
     padding-left: $font-size;
     counter-reset: listCounter;
-
-    li
-    {
+    li {
         counter-increment: listCounter;
-
-        &:before
-        {
+        &:before {
             display: inline-block;
             text-align: center;
-            font-family: $font-mono;
             width: auto;
             margin-right: $font-size / 2;
             content: counters(listCounter, ".");
         }
+    }
+}
+
+@mixin t-link($link: $color-link) {
+    color: $link;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($link, 0.25);
+    padding-bottom: 2px;
+    outline: none;
+
+    &:hover {
+        border-bottom-color: opacify($link, 1);
+    }
+
+    &:focus,
+    &:active {
+        background-color: rgba($link, .1);
+        border-bottom: 1px solid rgba($link, 1);
+    }
+
+    &:visited {
+        $visitedColor: desaturate($link, .5);
+
+        color: $visitedColor;
+        border-bottom-color: $visitedColor;
     }
 }

@@ -6,10 +6,15 @@
   "repository": "git@github.com:fr4nki/tolerance-css.git",
   "author": "Anton Krivonos <i@fr4nki.ru>",
   "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/.bin/parcel serve ./example/index.html",
+    "build": "rimraf ./dist && ./node_modules/.bin/parcel build ./example/index.html --public-url '.'"
+  },
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "node-sass": "^4.9.3",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.9.7",
+    "rimraf": "^2.6.2"
   }
 }
