@@ -4,6 +4,16 @@ p {
 
 a {
     @include t-link($color-link);
+
+    &.t-link {
+        &-outer[href^="http://"],
+        &-outer[href^="https://"] {
+            &:after {
+                content: '\21AC';
+                padding-left: $gap / 7;
+            }
+        }
+    }
 }
 
 ul {
