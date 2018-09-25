@@ -2,7 +2,8 @@ p {
     margin: $gap 0;
 }
 
-a {
+a
+{
     @include t-link($color-link);
 
     &.t-link {
@@ -16,19 +17,39 @@ a {
     }
 }
 
-ul {
+strong,
+b
+{
+    font-weight: 700;
+}
+
+em,
+i
+{
+    font-style: italic;
+}
+
+ul
+{
     @include t-unordered-list($gap 0);
-    ul {
+
+    ul
+    {
         @include t-unordered-list(0, '\2022');
-        ul {
+
+        ul
+        {
             @include t-unordered-list('\25AA');
         }
     }
 }
 
-ol {
+ol
+{
     @include t-ordered-list($gap 0);
-    ol {
+
+    ol
+    {
         @include t-ordered-list();
     }
 }
