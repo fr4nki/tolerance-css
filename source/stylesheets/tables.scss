@@ -67,7 +67,7 @@ table {
         + tbody {
             tr:first-child {
                 td {
-                    border-top: 2px solid $color-table-border-body;
+                    border-top: $gap / 7 solid $color-table-border-body;
                 }
             }
         }
