@@ -1,7 +1,8 @@
-@mixin t-unordered-list($margin: 0, $bullet: '\2013') {
+@mixin t-unordered-list($margin: 0, $paddingLeft: $gap, $bullet: '\2013') {
     margin: $margin;
     list-style: none;
-    padding-left: $font-size;
+    padding-left: 0;
+
     li {
         &:before {
             content: $bullet;
@@ -10,22 +11,32 @@
             width: $font-size * 1.5;
             margin-right: $font-size / 2;
         }
+
+        ul {
+            padding-left: $paddingLeft;
+        }
     }
 }
 
-@mixin t-ordered-list($margin: 0) {
+@mixin t-ordered-list($margin: 0, $paddingLeft: $gap) {
     margin: $margin;
     list-style: none;
-    padding-left: $font-size;
+    padding-left: 0;
     counter-reset: listCounter;
+
     li {
         counter-increment: listCounter;
+
         &:before {
             display: inline-block;
             text-align: center;
             width: auto;
             margin-right: $font-size / 2;
             content: counters(listCounter, ".");
+        }
+
+        ol {
+            padding-left: $paddingLeft;
         }
     }
 }

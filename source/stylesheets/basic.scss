@@ -35,11 +35,11 @@ ul
 
     ul
     {
-        @include t-unordered-list(0, '\2022');
+        @include t-unordered-list(0, $gap, '\2022');
 
         ul
         {
-            @include t-unordered-list('\25AA');
+            @include t-unordered-list(0, $gap, '\25AA');
         }
     }
 }
@@ -50,7 +50,7 @@ ol
 
     ol
     {
-        @include t-ordered-list();
+        @include t-ordered-list(0, $gap);
     }
 }
 
