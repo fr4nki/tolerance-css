@@ -22,8 +22,15 @@ $font-size-h4: $font-size * 1.25;
 $font-size-h5: $font-size * 1;
 $font-size-h6: $font-size * 1;
 
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
 // - COLORS
 $color-base: $_t--color-default;
+$color-base-light: lighten($color-base, 75%);
 $color-link: $_t--color-link;
 $color-highlight: $_t--color-highlight;
 $color-accent: $_t--color-accent;

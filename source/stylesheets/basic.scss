@@ -32,26 +32,11 @@ i
 ul
 {
     @include t-unordered-list($gap 0);
-
-    ul
-    {
-        @include t-unordered-list(0, $gap, '\2022');
-
-        ul
-        {
-            @include t-unordered-list(0, $gap, '\25AA');
-        }
-    }
 }
 
 ol
 {
     @include t-ordered-list($gap 0);
-
-    ol
-    {
-        @include t-ordered-list(0, $gap);
-    }
 }
 
 hr

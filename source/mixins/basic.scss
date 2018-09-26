@@ -1,19 +1,33 @@
-@mixin t-unordered-list($margin: 0, $paddingLeft: $gap, $bullet: '\2013') {
+@mixin t-unordered-list($margin: 0, $paddingLeft: $gap) {
     margin: $margin;
     list-style: none;
     padding-left: 0;
 
     li {
         &:before {
-            content: $bullet;
+            content: '\2013';
             display: inline-block;
             text-align: center;
-            width: $font-size * 1.5;
             margin-right: $font-size / 2;
         }
 
         ul {
             padding-left: $paddingLeft;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            li {
+                &:before {
+                    content: '\2022';
+                }
+
+                li {
+                    &:before {
+                        content : '\25AA';
+                    }
+                }
+            }
+
         }
     }
 }
@@ -37,6 +51,7 @@
 
         ol {
             padding-left: $paddingLeft;
+            margin: 0;
         }
     }
 }
