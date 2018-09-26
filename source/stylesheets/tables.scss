@@ -2,6 +2,13 @@ table {
     border-collapse: collapse;
     margin: $gap 0;
 
+// $color-table-background-head: $color-base-light;
+// $color-table-background-foot: $color-base-light;
+// $color-table-border-head: $color-base-light;
+// $color-table-border-body: $color-base-light;
+// $color-table-border-foot: $color-base-light;
+
+
     &.t-table {
         &-full {
             width: 100%;
@@ -19,17 +26,19 @@ table {
     td,
     th {
         padding: $gap / 4 $gap / 2 ($gap / 4 - 1) $gap / 2;
-        border-right: 1px solid $color-base-light;
-        border-bottom: 1px solid $color-base-light;
     }
 
     th {
-        background-color: $color-base-light;
+        background-color: $color-table-background-head;
+        border-right: 1px solid $color-table-border-head;
+        border-bottom: 1px solid $color-table-border-head;
         font-weight: 500;
         font-size: inherit;
     }
 
     td {
+        border-right: 1px solid $color-table-border-body;
+        border-bottom: 1px solid $color-table-border-body;
         &:last-child {
             border-right: 1px solid transparent;
         }
@@ -38,17 +47,24 @@ table {
     thead {
         td,
         th {
-            background-color: $color-base-light;
+            background-color: $color-table-background-head;
+            border-right: 1px solid $color-table-border-head;
+            border-bottom: 1px solid $color-table-border-head;
             font-weight: bolder;
             font-size: inherit;
         }
     }
 
     tfoot {
+        td {
+            border-right: 1px solid $color-table-border-foot;
+            border-bottom: 1px solid $color-table-border-foot;
+        }
+
         tr:last-child {
             td {
-                border-bottom: 1px $color-base-light;
-                background-color: $color-base-light;
+                border-bottom: 1px solid $color-table-border-foot;
+                background-color: $color-table-background-foot;
                 font-weight: bolder;
             }
         }
@@ -58,7 +74,7 @@ table {
         + tbody {
             tr:first-child {
                 td {
-                    border-top: 2px solid $color-base-light;
+                    border-top: 2px solid $color-table-border-body;
                 }
             }
         }

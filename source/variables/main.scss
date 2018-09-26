@@ -31,6 +31,14 @@ $font-weight-bold: 700;
 // - COLORS
 $color-base: $_t--color-default;
 $color-base-light: lighten($color-base, 75%);
+
 $color-link: $_t--color-link;
+
+$color-table-background-head: $color-base-light;
+$color-table-background-foot: $color-base-light;
+$color-table-border-head: $color-base-light;
+$color-table-border-body: $color-base-light;
+$color-table-border-foot: $color-base-light;
+
 $color-highlight: $_t--color-highlight;
 $color-accent: $_t--color-accent;
