@@ -59,14 +59,28 @@
     }
 }
 
-@mixin t-horizontal-rule($color: $color-base, $margin: $gap 0, $height: 1px) {
+@mixin t-horizontal-rule(
+    $color: $color-base,
+    $margin: $gap 0,
+    $blockHeight: $gap / 2,
+    $lineHeight: 1px
+) {
     display: block;
     width: 100%;
-    height: $height;
-    background: $color;
+    height: $blockHeight;
     font-size: 0;
     padding: 0;
     border: none;
     margin: $margin;
-    transform: translateY(-$height);
+    position: relative;
+
+    &:after {
+        content: '';
+        height: $lineHeight;
+        position: absolute;
+        background-color: $color;
+        width: 100%;
+        top: 50%;
+        margin-top: -$lineHeight;
+    }
 }
