@@ -53,3 +53,8 @@ ol
         @include t-ordered-list();
     }
 }
+
+hr
+{
+    @include t-horizontal-rule();
+}

@@ -58,3 +58,15 @@
         border-bottom-color: $linkVisited;
     }
 }
+
+@mixin t-horizontal-rule($color: $color-base, $margin: $gap 0, $height: 1px) {
+    display: block;
+    width: 100%;
+    height: $height;
+    background: $color;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    margin: $margin;
+    transform: translateY(-$height);
+}
