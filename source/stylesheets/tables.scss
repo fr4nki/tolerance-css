@@ -2,6 +2,16 @@ table {
     border-collapse: collapse;
     margin: $gap 0;
 
+    caption {
+        $lineHeight: $font-size * 1.25;
+
+        text-align: center;
+        line-height: $lineHeight;
+        font-size: $font-size;
+        padding: (($gap - $lineHeight) / 2) 0;
+        font-style: italic;
+    }
+
     &.t-table {
         &-full {
             width: 100%;

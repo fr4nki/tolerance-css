@@ -43,3 +43,32 @@ hr
 {
     @include t-horizontal-rule();
 }
+
+ins {
+    @include t-bordered-text(1px);
+}
+
+kbd {
+    font-family: $font-mono;
+    font-size: $font-size-small;
+    padding: $gap / 14 $gap / 7;
+    background: $color-base-light;
+    border-radius: $gap / 7;
+}
+
+small {
+    font-size: $font-size-small;
+}
+
+sup {
+    @include t-uppertext($font-size * 0.75);
+}
+
+sub {
+    @include t-lowertext($font-size * 0.75);
+}
+
+abbr {
+    cursor: help;
+    @include t-bordered-text(1px, dotted, $color-base);
+}

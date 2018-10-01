@@ -1,6 +1,11 @@
 @function _t--header-font-offset($fontSize, $lineHeight, $gapsCounter) {
     $fontHeight: $fontSize * $lineHeight;
     $toTopClosestGapLine: $fontHeight % $gap;
+
+    @if $fontHeight < $gap {
+        $toTopClosestGapLine: $gap - $fontHeight;
+    }
+
     @return $gapsCounter * $gap + $toTopClosestGapLine;
 }
 
