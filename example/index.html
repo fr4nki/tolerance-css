@@ -70,25 +70,25 @@
             });</pre>
 
             <div class="t-pre">
-                <p>[].forEach.call(document.querySelectorAll('code'), function($code) {</p>
-                <p>    var lines = $code.textContent.split('\n');</p>
-                <p></p>
-                <p>    if (lines[0] === '')</p>
-                <p>    {</p>
-                <p>        lines.shift()</p>
-                <p>    }</p>
-                <p></p>
-                <p>    var matches;</p>
-                <p>    var indentation = (matches = /^[\s\t]+/.exec(lines[0])) !== null ? matches[0] : null;</p>
-                <p>    if (!!indentation) {</p>
-                <p>        lines = lines.map(function(line) {</p>
-                <p>            line = line.replace(indentation, '')</p>
-                <p>            return line.replace(/\t/g, '    ')</p>
-                <p>        });</p>
-                <p></p>
-                <p>        $code.textContent = lines.join('\n').trim();</p>
-                <p>    }</p>
-                <p>});</p>
+                <span>[].forEach.call(document.querySelectorAll('code'), function($code) {</span>
+                <span>    var lines = $code.textContent.split('\n');</span>
+                <span></span>
+                <span>    if (lines[0] === '')</span>
+                <span>    {</span>
+                <span>        lines.shift()</span>
+                <span>    }</span>
+                <span></span>
+                <span>    var matches;</span>
+                <span>    var indentation = (matches = /^[\s\t]+/.exec(lines[0])) !== null ? matches[0] : null;</span>
+                <span>    if (!!indentation) {</span>
+                <span>        lines = lines.map(function(line) {</span>
+                <span>            line = line.replace(indentation, '')</span>
+                <span>            return line.replace(/\t/g, '    ')</span>
+                <span>        });</span>
+                <span></span>
+                <span>        $code.textContent = lines.join('\n').trim();</span>
+                <span>    }</span>
+                <span>});</span>
             </div>
 
         <dl>
