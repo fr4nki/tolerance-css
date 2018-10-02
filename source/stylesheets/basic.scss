@@ -61,11 +61,11 @@ small {
 }
 
 sup {
-    @include t-uppertext($font-size * 0.75);
+    @include t-text-offset(-.5em, 0, $font-size * 0.75);
 }
 
 sub {
-    @include t-lowertext($font-size * 0.75);
+    @include t-text-offset(.25em, 0, $font-size * 0.75);
 }
 
 abbr {
