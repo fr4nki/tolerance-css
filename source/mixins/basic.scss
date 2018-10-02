@@ -1,4 +1,15 @@
-@mixin t-unordered-list(
+@mixin t-bullet-list (
+    $content: '\2013'
+) {
+    &:before {
+        content: '\2013';
+        display: inline-block;
+        text-align: center;
+        margin-right: $font-size / 2;
+    }
+}
+
+@mixin t-unordered-list (
     $margin: 0,
     $paddingLeft: $gap
 ) {
@@ -7,12 +18,7 @@
     padding-left: 0;
 
     li {
-        &:before {
-            content: '\2013';
-            display: inline-block;
-            text-align: center;
-            margin-right: $font-size / 2;
-        }
+        @include t-bullet-list();
 
         ul {
             padding-left: $paddingLeft;
@@ -35,7 +41,7 @@
     }
 }
 
-@mixin t-ordered-list(
+@mixin t-ordered-list (
     $margin: 0,
     $paddingLeft: $gap
 ) {
@@ -62,7 +68,7 @@
     }
 }
 
-@mixin t-link(
+@mixin t-link (
     $linkNormal: $color-link,
     $linkHover: $color-link,
     $linkActive: $color-link,
@@ -91,7 +97,7 @@
     }
 }
 
-@mixin t-horizontal-rule(
+@mixin t-horizontal-rule (
     $color: $color-base,
     $margin: $gap 0,
     $blockHeight: $gap / 2,
@@ -137,4 +143,33 @@
     vertical-align: baseline;
     transform: translate($textOffsetY, $textOffsetX);
     font-size: $fontSize;
+}
+
+@mixin t-accent-block(
+    $backgroundColor: $color-accent,
+    $paddingX: $gap / 4,
+    $paddingY: $gap / 7,
+    $borderRadius: $gap / 7
+) {
+    background-color: $backgroundColor;
+    padding: $paddingY $paddingX;
+    border-radius: $borderRadius;
+}
+
+@mixin t-codeblock(
+    $backgroundColor: $color-base-light,
+    $paddingX: $gap / 4,
+    $paddingY: $gap / 7,
+    $borderRadius: $gap / 7
+) {
+    @include t-accent-block(
+        $backgroundColor: $backgroundColor,
+        $paddingX: $paddingX,
+        $paddingY: $paddingY,
+        $borderRadius: $borderRadius
+    );
+    font-family: $font-mono;
+    display: block;
+    margin: $gap 0;
+    overflow: auto;
 }

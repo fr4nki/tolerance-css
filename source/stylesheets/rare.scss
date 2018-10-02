@@ -1,0 +1,27 @@
+blockquote {
+    @include t-accent-block($paddingX: $gap / 2, $paddingY: $gap / 4);
+    margin: $gap 0;
+
+    cite {
+        font-style: italic;
+
+        &:before {
+            content: '\2013  ';
+        }
+    }
+
+    &[cite] {
+        &:after {
+            content: '\2013  ' attr(cite);
+            font-style: italic;
+        }
+    }
+
+    > p {
+        margin: 0;
+    }
+}
+
+q {
+    font-style: italic;
+}

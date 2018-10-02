@@ -29,16 +29,6 @@ i
     font-style: italic;
 }
 
-ul
-{
-    @include t-unordered-list($gap 0);
-}
-
-ol
-{
-    @include t-ordered-list($gap 0);
-}
-
 hr
 {
     @include t-horizontal-rule();
@@ -71,4 +61,30 @@ sub {
 abbr {
     cursor: help;
     @include t-bordered-text(1px, dotted, $color-base);
+}
+
+mark {
+    @include t-accent-block();
+}
+
+code {
+    @include t-accent-block($backgroundColor: $color-base-light);
+    font-family: $font-mono;
+}
+
+pre {
+    @include t-codeblock();
+    white-space: pre;
+}
+
+.t-pre {
+    @include t-codeblock(
+        $paddingX: $gap / 2,
+        $paddingY: $gap / 4
+    );
+
+    p, span {
+        white-space: pre;
+        margin: 0;
+    }
 }

@@ -22,11 +22,90 @@
 
         <h2>H2 Apple представила обновленную версию модели</h2>
 
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat deserunt quasi veniam mollitia consectetur saepe minus beatae ea voluptatem consequuntur! Officia dolorum consequatur illum tenetur sit totam hic laudantium modi?</p>
+
+        <blockquote cite="http://developer.mozilla.org">
+            <p>This is a quotation taken from the Mozilla Developer Center.</p>
+            <p>This is a quotation taken from the Mozilla Developer Center.</p>
+            <p>This is a quotation taken from the Mozilla Developer Center.</p>
+        </blockquote>
+
+        <p>Станислав Лец утверждал: <q>Чаще всего выход там, где был
+            вход</q>.</p>
+
+        <blockquote>
+            <p>This is a quotation taken from the Mozilla Developer Center.</p>
+            <cite>Blockquote from http://developer.mozilla.org</cite>
+        </blockquote>
+
         <p>Прежде, чем <ins>перейти непосредственно</ins> к изучению <abbr title="Common Gateway Interface, общий шлюзовый интерфейс">CGI</abbr> новинки, посмотрим <kbd>&lt;Alt&gt;+&lt;Backspace&gt;</kbd> на текущую линейку планшетов Apple, чтобы
-            понять, с какими моделями стоит сравнивать iPad 2018 года. Итак, на данный момент в продаже доступны,
+            понять, с какими моделями стоит сравнивать <mark>iPad 2018 года</mark>. Итак, на данный момент в продаже доступны,
             помимо вышеупомянутой модели, iPad Pro 12,9″ (второго поколения) и 10,5″, а также iPad mini 4.</p>
 
+        <p>Lorem <code>ipsum dolor sit amet consectetur adipisicing elit</code>. Doloribus, ex id voluptatum voluptates harum quod perspiciatis minima quasi iusto amet provident repudiandae aut cupiditate unde. Porro quia consequatur optio quas.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolore nihil labore voluptate est pariatur commodi perspiciatis quibusdam deleniti autem, voluptatem praesentium error animi explicabo saepe soluta nesciunt exercitationem dolorem.</p>
+
         <h3>H3 Технические характеристики</h3>
+
+        <pre>
+            [].forEach.call(document.querySelectorAll('code'), function($code) {
+                var lines = $code.textContent.split('\n');
+
+                if (lines[0] === '')
+                {
+                    lines.shift()
+                }
+
+                var matches;
+                var indentation = (matches = /^[\s\t]+/.exec(lines[0])) !== null ? matches[0] : null;
+                if (!!indentation) {
+                    lines = lines.map(function(line) {
+                        line = line.replace(indentation, '')
+                        return line.replace(/\t/g, '    ')
+                    });
+
+                    $code.textContent = lines.join('\n').trim();
+                }
+            });</pre>
+
+            <div class="t-pre">
+                <p>[].forEach.call(document.querySelectorAll('code'), function($code) {</p>
+                <p>    var lines = $code.textContent.split('\n');</p>
+                <p></p>
+                <p>    if (lines[0] === '')</p>
+                <p>    {</p>
+                <p>        lines.shift()</p>
+                <p>    }</p>
+                <p></p>
+                <p>    var matches;</p>
+                <p>    var indentation = (matches = /^[\s\t]+/.exec(lines[0])) !== null ? matches[0] : null;</p>
+                <p>    if (!!indentation) {</p>
+                <p>        lines = lines.map(function(line) {</p>
+                <p>            line = line.replace(indentation, '')</p>
+                <p>            return line.replace(/\t/g, '    ')</p>
+                <p>        });</p>
+                <p></p>
+                <p>        $code.textContent = lines.join('\n').trim();</p>
+                <p>    }</p>
+                <p>});</p>
+            </div>
+
+        <dl>
+            <dt>Name: </dt>
+            <dd>John Don</dd>
+            <dd>John Don</dd>
+            <dd>John Don</dd>
+
+            <dt>Age: </dt>
+            <dd>23</dd>
+
+            <dt>Gender: </dt>
+            <dd>Male</dd>
+
+            <dt>Day of Birth:</dt>
+            <dd>12th May 1986</dd>
+        </dl>
 
         <ul>
             <li>SoC Apple A10 1,85 ГГц (2 ядра @2,34 ГГц + 2 энергоэффективных ядра)</li>
