@@ -13,7 +13,7 @@
         for(var i = 0; linesCount > i; i++) {
             gridContainer.appendChild(document.createElement('div'));
         }
-    }
+    };
 
     gridShower.addEventListener('click', function(){
         gridContainer.classList.toggle('show')
@@ -21,7 +21,7 @@
 
     blockShower.addEventListener('click', function(){
         document.body.classList.toggle('debug-blocks')
-    })
+    });
 
     generateGrid();
 }());

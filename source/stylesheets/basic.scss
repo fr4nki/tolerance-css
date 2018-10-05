@@ -40,7 +40,6 @@ ins {
 
 kbd {
     font-family: $font-mono;
-    font-size: $font-size-small;
     padding: $gap / 14 $gap / 7;
     background: $color-base-light;
     border-radius: $gap / 7;
@@ -79,8 +78,8 @@ pre {
 
 .t-pre {
     @include t-codeblock(
-        $paddingX: $gap / 2,
-        $paddingY: $gap / 4
+        $paddingX: $gap,
+        $paddingY: $gap / 2
     );
 
     p, span {

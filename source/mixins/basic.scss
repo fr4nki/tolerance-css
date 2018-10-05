@@ -99,7 +99,7 @@
 
 @mixin t-horizontal-rule (
     $color: $color-base,
-    $margin: $gap 0,
+    $margin: ($gap + $gap / 4) 0,
     $blockHeight: $gap / 2,
     $lineHeight: 1px
 ) {
@@ -154,12 +154,13 @@
     background-color: $backgroundColor;
     padding: $paddingY $paddingX;
     border-radius: $borderRadius;
+    color: inherit;
 }
 
 @mixin t-codeblock(
     $backgroundColor: $color-base-light,
     $paddingX: $gap / 4,
-    $paddingY: $gap / 7,
+    $paddingY: $gap / 2,
     $borderRadius: $gap / 7
 ) {
     @include t-accent-block(
