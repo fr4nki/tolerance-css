@@ -23,3 +23,25 @@ h6
 {
     @include t-header($font-size-h5, 1, 0.5);
 }
+
+// TODO: add anchor styles
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     > a {
+//         display: inline-block;
+//         color: inherit;
+//         position: relative;
+
+//         &:hover {
+//             &:before {
+//                 content: '\00B6';
+//                 position: absolute;
+//             }
+//         }
+//     }
+// }
