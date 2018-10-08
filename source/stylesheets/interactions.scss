@@ -19,6 +19,33 @@ select {
     }
 }
 
+button {
+    $borderWidth: 1px;
+
+    line-height: $font-line - $borderWidth * 2;
+    color: $color-base;
+    font-size: $font-size;
+    font-family: $font-sans;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    outline: none;
+    border: $borderWidth solid rgba($color-base, 0.25);
+    padding: $gap / 7 $gap / 2;
+    margin: -($gap / 7) $gap / 4;
+    border-radius: $gap / 7;
+    box-sizing: border-box;
+    @include t-animation();
+
+    &:active,
+    &:focus {
+        background-color: rgba($color-link, .1);
+        border-color: rgba($color-link, 1);
+    }
+}
+
 input {
     $borderWidth: 1px;
 
@@ -37,11 +64,46 @@ input {
     margin: -($gap / 7) $gap / 4;
     border-radius: $gap / 7;
     box-sizing: border-box;
+    @include t-animation();
 
     &:active,
     &:focus {
         background-color: rgba($color-link, .1);
-        border: 1px solid rgba($color-link, 1);
+        border-color: rgba($color-link, 1);
+    }
+
+    &[type='radio'],
+    &[type='checkbox'] {
+        vertical-align: middle;
+        width: $font-size;
+        height: $font-size;
+        margin-top: -(($font-size - 1) / 2);
+        padding: 0;
+
+        &:focus {
+            + label {
+                background-color: rgba($color-link, .1);
+                padding: $gap / 7 $gap / 4;
+                margin: 0 -($gap / 4);
+                border-radius: $gap / 7;
+            }
+        }
+    }
+
+    &[type='button'],
+    &[type='submit'] {
+        margin-left: 0;
+        padding-left: $gap / 2;
+        padding-right: $gap / 2;
+
+        &:hover {
+            background-color: rgba($color-link, .1);
+            border-color: rgba($color-link, 1);
+        }
+    }
+
+    &::placeholder {
+        color: rgba($color-base, 0.25);
     }
 }
 
@@ -54,6 +116,17 @@ label {
         width: 100%;
         display: block;
         margin: $marginTop 0 0 0;
+
+        &[type='checkbox'],
+        &[type='radio'] {
+            display: inline-block;
+            vertical-align: middle;
+            width: $font-size;
+            height: $font-size;
+            margin: -($gap / 7) $gap / 4;
+            margin-top: -(($font-size - 1) / 2);
+            padding: 0;
+        }
     }
 }
 
@@ -80,5 +153,25 @@ textarea {
     &:focus {
         background-color: rgba($color-link, .1);
         border: 1px solid rgba($color-link, 1);
+    }
+}
+
+fieldset {
+    border: 1px solid rgba($color-base, 0.25);
+    border-radius: $gap / 7;
+    margin: $gap 0;
+
+    p {
+        margin: 0;
+        margin-bottom: $gap / 2;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    legend {
+        font-size: $font-size;
+        padding: 0 $gap / 2;
     }
 }
