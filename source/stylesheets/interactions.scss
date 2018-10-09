@@ -91,6 +91,7 @@ input {
     }
 
     &[type='button'],
+    &[type='reset'],
     &[type='submit'] {
         margin-left: 0;
         padding-left: $gap / 2;
