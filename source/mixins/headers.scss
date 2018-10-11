@@ -15,4 +15,5 @@
     line-height: $lineHeight * $fontSize;
     margin-top: _t--header-font-offset($fontSize, $lineHeight, $gapTop);
     margin-bottom: $gapBottom * $gap;
+    color: inherit;
 }

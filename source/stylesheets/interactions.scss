@@ -26,23 +26,34 @@ button {
     color: $color-base;
     font-size: $font-size;
     font-family: $font-sans;
-    background: transparent;
+    background-color: $color-background;
     border: 0;
     padding: 0;
     margin: 0;
     vertical-align: top;
     outline: none;
-    border: $borderWidth solid rgba($color-base, 0.25);
+    border: $borderWidth solid rgba-to-rgb($color-base, $color-background, 25%);
     padding: $gap / 7 $gap / 2;
     margin: -($gap / 7) $gap / 4;
     border-radius: $gap / 7;
     box-sizing: border-box;
     @include t-animation();
 
+    &:hover {
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+    }
+
     &:active,
     &:focus {
-        background-color: rgba($color-link, .1);
-        border-color: rgba($color-link, 1);
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+        border-color: rgba-to-rgb($color-link, $color-background, 100%);
+    }
+
+    &[disabled],
+    &.t-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+        background-color: rgba-to-rgb($color-base, $color-background, 10%);
     }
 }
 
@@ -53,23 +64,27 @@ input {
     color: $color-base;
     font-size: $font-size;
     font-family: $font-sans;
-    background: transparent;
+    background-color: $color-background;
     border: 0;
     padding: 0;
     margin: 0;
     vertical-align: top;
     outline: none;
-    border: $borderWidth solid rgba($color-base, 0.25);
+    border: $borderWidth solid rgba-to-rgb($color-base, $color-background, 25%);
     padding: $gap / 7 $gap / 4;
     margin: -($gap / 7) $gap / 4;
     border-radius: $gap / 7;
     box-sizing: border-box;
     @include t-animation();
 
+    &:hover {
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+    }
+
     &:active,
     &:focus {
-        background-color: rgba($color-link, .1);
-        border-color: rgba($color-link, 1);
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+        border-color: rgba-to-rgb($color-link, $color-background, 100%);
     }
 
     &[type='radio'],
@@ -96,10 +111,16 @@ input {
         margin-left: 0;
         padding-left: $gap / 2;
         padding-right: $gap / 2;
+    }
 
-        &:hover {
-            background-color: rgba($color-link, .1);
-            border-color: rgba($color-link, 1);
+    &[disabled],
+    &.t-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+        background-color: rgba-to-rgb($color-base, $color-background, 10%);
+
+        + label {
+            color: rgba-to-rgb($color-base, $color-background, 75%);
         }
     }
 
@@ -129,6 +150,10 @@ label {
             padding: 0;
         }
     }
+
+    &.t-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+    }
 }
 
 textarea {
@@ -150,15 +175,34 @@ textarea {
     border-radius: $gap / 7;
     box-sizing: border-box;
 
+    &:hover {
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+    }
+
     &:active,
     &:focus {
-        background-color: rgba($color-link, .1);
-        border: 1px solid rgba($color-link, 1);
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+        border: 1px solid rgba-to-rgb($color-link, $color-background, 100%);
+    }
+
+    &[disabled],
+    &.t-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+        background-color: rgba-to-rgb($color-base, $color-background, 10%);
+
+        + label {
+            color: rgba-to-rgb($color-base, $color-background, 75%);
+        }
+    }
+
+    &::placeholder {
+        color: rgba($color-base, 0.25);
     }
 }
 
 fieldset {
-    border: 1px solid rgba($color-base, 0.25);
+    border: 1px solid rgba-to-rgb($color-base, $color-background, 25%);
     border-radius: $gap / 7;
     margin: $gap 0;
 

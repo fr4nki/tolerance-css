@@ -1,47 +1,31 @@
-h1
+h1,
+.t-h1,
 {
     @include t-header($font-size-h1, 2.5, 1.5);
 }
 
-h2
+h2,
+.t-h2,
 {
     @include t-header($font-size-h2, 1.5, 1);
 }
 
-h3
+h3,
+.t-h3,
 {
     @include t-header($font-size-h3, 1.5, 0.5);
 }
 
-h4
+h4,
+.t-h4,
 {
     @include t-header($font-size-h4, 1, 0.5);
 }
 
 h5,
-h6
+.t-h5,
+h6,
+.t-h6
 {
     @include t-header($font-size-h5, 1, 0.5);
 }
-
-// TODO: add anchor styles
-
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     > a {
-//         display: inline-block;
-//         color: inherit;
-//         position: relative;
-
-//         &:hover {
-//             &:before {
-//                 content: '\00B6';
-//                 position: absolute;
-//             }
-//         }
-//     }
-// }

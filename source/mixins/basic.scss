@@ -1,3 +1,11 @@
+@function rgba-to-rgb(
+    $rgba,
+    $bg: $color-background,
+    $percentage: 25%
+) {
+    @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $bg, alpha($rgba) * $percentage);
+}
+
 @mixin t-bullet-list (
     $content: '\2013'
 ) {

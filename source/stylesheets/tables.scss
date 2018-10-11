@@ -16,6 +16,14 @@ table {
         &-full {
             width: 100%;
         }
+
+        &-stripped {
+            tbody > tr {
+                &:nth-child(even) {
+                    background-color: $color-table-background-stripped;
+                }
+            }
+        }
     }
 
     tr {
