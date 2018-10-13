@@ -1,0 +1,16 @@
+@mixin t-image-is-left($margin: $gap $gap $gap 0) {
+    display: block;
+    float: left;
+    margin: $margin;
+}
+
+@mixin t-image-is-right($margin: $gap 0 $gap $gap) {
+    float: right;
+    margin: $margin;
+}
+
+@mixin t-image-is-center($margin: $gap auto) {
+    display: block;
+    float: none;
+    margin: $margin;
+}

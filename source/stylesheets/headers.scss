@@ -1,0 +1,105 @@
+h1,
+.#{$baseClassNamePrefix}-h1
+{
+    @include t-header(
+        $fontSize: $font-size-h1,
+        $gapTop: $gap-h1-top,
+        $gapBottom: $gap-h1-bottom
+    );
+
+    + .#{$baseClassNamePrefix}-subhead {
+        margin-top: -($gap-h1-bottom * $gap);
+        margin-bottom: $gap-h1-bottom * $gap;
+    }
+}
+
+h2,
+.#{$baseClassNamePrefix}-h2
+{
+    @include t-header(
+        $fontSize: $font-size-h2,
+        $gapTop: $gap-h2-top,
+        $gapBottom: $gap-h2-bottom
+    );
+
+    + .#{$baseClassNamePrefix}-subhead {
+        margin-top: -($gap-h2-bottom * $gap);
+        margin-bottom: $gap-h2-bottom * $gap;
+    }
+}
+
+h3,
+.#{$baseClassNamePrefix}-h3
+{
+    @include t-header(
+        $fontSize: $font-size-h3,
+        $gapTop: $gap-h3-top,
+        $gapBottom: $gap-h3-bottom
+    );
+
+    + .#{$baseClassNamePrefix}-subhead {
+        margin-top: -($gap-h3-bottom * $gap);
+        margin-bottom: $gap-h3-bottom * $gap;
+    }
+}
+
+h4,
+.#{$baseClassNamePrefix}-h4
+{
+    @include t-header(
+        $fontSize: $font-size-h4,
+        $gapTop: $gap-h4-top,
+        $gapBottom: $gap-h4-bottom
+    );
+
+    + .#{$baseClassNamePrefix}-subhead {
+        margin-top: -($gap-h4-bottom * $gap);
+        margin-bottom: $gap-h4-bottom * $gap;
+    }
+}
+
+h5,
+.#{$baseClassNamePrefix}-h5
+{
+    @include t-header(
+        $fontSize: $font-size-h5,
+        $gapTop: $gap-h5-top,
+        $gapBottom: $gap-h5-bottom
+    );
+
+    + .#{$baseClassNamePrefix}-subhead {
+        margin-top: -($gap-h5-bottom * $gap);
+        margin-bottom: $gap-h5-bottom * $gap;
+    }
+}
+
+h6,
+.#{$baseClassNamePrefix}-h6
+{
+    @include t-header(
+        $fontSize: $font-size-h6,
+        $gapTop: $gap-h6-top,
+        $gapBottom: $gap-h6-bottom
+    );
+    + .#{$baseClassNamePrefix}-subhead {
+        margin-top: -($gap-h6-bottom * $gap);
+        margin-bottom: $gap-h6-bottom * $gap;
+    }
+}
+
+h1,
+.#{$baseClassNamePrefix}-h1,
+h2,
+.#{$baseClassNamePrefix}-h2,
+h3,
+.#{$baseClassNamePrefix}-h3,
+h4,
+.#{$baseClassNamePrefix}-h4,
+h5,
+.#{$baseClassNamePrefix}-h5,
+h6,
+.#{$baseClassNamePrefix}-h6 {
+    + .#{$baseClassNamePrefix}-subhead {
+        font-size: $font-size-small;
+    }
+}

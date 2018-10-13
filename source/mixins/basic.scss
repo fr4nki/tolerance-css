@@ -1,0 +1,184 @@
+@function rgba-to-rgb(
+    $rgba,
+    $bg: $color-background,
+    $percentage: 25%
+) {
+    @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $bg, alpha($rgba) * $percentage);
+}
+
+@mixin t-bullet-list (
+    $content: '\2013'
+) {
+    &:before {
+        content: '\2013';
+        display: inline-block;
+        text-align: center;
+        margin-right: $font-size / 2;
+    }
+}
+
+@mixin t-unordered-list (
+    $margin: 0,
+    $paddingLeft: $gap
+) {
+    margin: $margin;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        @include t-bullet-list();
+
+        ul {
+            padding-left: $paddingLeft;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            li {
+                &:before {
+                    content: '\2022';
+                }
+
+                li {
+                    &:before {
+                        content : '\25AA';
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@mixin t-ordered-list (
+    $margin: 0,
+    $paddingLeft: $gap
+) {
+    margin: $margin;
+    list-style: none;
+    padding-left: 0;
+    counter-reset: listCounter;
+
+    li {
+        counter-increment: listCounter;
+
+        &:before {
+            display: inline-block;
+            text-align: center;
+            width: auto;
+            margin-right: $font-size / 2;
+            content: counters(listCounter, ".");
+        }
+
+        ol {
+            padding-left: $paddingLeft;
+            margin: 0;
+        }
+    }
+}
+
+@mixin t-link (
+    $linkNormal: $color-link,
+    $linkHover: $color-link,
+    $linkActive: $color-link,
+    $linkVisited: ($color-base + $linkNormal) * .5
+) {
+    color: $linkNormal;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($linkNormal, 0.25);
+    padding-bottom: 2px;
+    outline: none;
+
+    &:hover {
+        color: $linkHover;
+        border-bottom-color: opacify($linkHover, 1);
+    }
+
+    &:focus,
+    &:active {
+        background-color: rgba($linkActive, .1);
+        border-bottom: 1px solid rgba($linkActive, 1);
+    }
+
+    &:visited {
+        color: $linkVisited;
+        border-bottom-color: $linkVisited;
+    }
+}
+
+@mixin t-horizontal-rule (
+    $color: $color-base,
+    $margin: ($gap + $gap / 4) 0,
+    $blockHeight: $gap / 2,
+    $lineHeight: 1px
+) {
+    display: block;
+    width: 100%;
+    height: $blockHeight;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    margin: $margin;
+    position: relative;
+
+    &:after {
+        content: '';
+        height: $lineHeight;
+        position: absolute;
+        background-color: $color;
+        width: 100%;
+        top: 50%;
+        margin-top: -$lineHeight;
+    }
+}
+
+@mixin t-bordered-text(
+    $thickness: 1px,
+    $type: solid,
+    $borderColor: rgba($color-base, 0.25)
+) {
+    text-decoration: none;
+    border-bottom: $thickness $type $borderColor;
+    padding-bottom: 2px;
+}
+
+@mixin t-text-offset(
+    $textOffsetX,
+    $textOffsetY,
+    $fontSize: $font-size * 0.75
+) {
+    display: inline-block;
+    line-height: 0;
+    vertical-align: baseline;
+    transform: translate($textOffsetY, $textOffsetX);
+    font-size: $fontSize;
+}
+
+@mixin t-highlighted-block(
+    $backgroundColor: $color-highlight,
+    $paddingX: $gap / 4,
+    $paddingY: $gap / 7,
+    $borderRadius: $gap / 7
+) {
+    background-color: $backgroundColor;
+    padding: $paddingY $paddingX;
+    border-radius: $borderRadius;
+    color: inherit;
+}
+
+@mixin t-codeblock(
+    $backgroundColor: $color-base-light,
+    $paddingX: $gap / 4,
+    $paddingY: $gap / 2,
+    $borderRadius: $gap / 7
+) {
+    @include t-highlighted-block(
+        $backgroundColor: $backgroundColor,
+        $paddingX: $paddingX,
+        $paddingY: $paddingY,
+        $borderRadius: $borderRadius
+    );
+    font-family: $font-mono;
+    display: block;
+    margin: $gap 0;
+    overflow: auto;
+}

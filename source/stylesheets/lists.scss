@@ -1,0 +1,22 @@
+ul
+{
+    @include t-unordered-list($gap 0);
+}
+
+ol
+{
+    @include t-ordered-list($gap 0);
+}
+
+dl {
+    margin: $gap 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0;
+    margin-left: $gap;
+}

@@ -1,0 +1,127 @@
+p {
+    margin: $gap 0;
+}
+
+a
+{
+    @include t-link($color-link);
+
+    &.#{$baseClassNamePrefix}-link {
+        &-outer[href^="//"],
+        &-outer[href^="http://"],
+        &-outer[href^="https://"] {
+            &:after {
+                content: '\21AC';
+                padding-left: $gap / 7;
+            }
+        }
+    }
+}
+
+strong,
+b,
+.#{$baseClassNamePrefix}-text-bold,
+{
+    font-weight: 700;
+}
+
+em,
+i,
+.#{$baseClassNamePrefix}-text-italic,
+{
+    font-style: italic;
+}
+
+.#{$baseClassNamePrefix}-text {
+    &-underline {
+        text-decoration: underline;
+    }
+
+    &-bordered {
+        @include t-bordered-text($borderColor: inherit);
+    }
+
+    &-striked {
+        text-decoration: line-through;
+    }
+
+    &-upper {
+        text-transform: uppercase;
+    }
+
+    &-capitalized {
+        text-transform: capitalize;
+    }
+}
+
+hr
+{
+    @include t-horizontal-rule();
+}
+
+ins {
+    @include t-bordered-text();
+}
+
+kbd {
+    font-family: $font-mono;
+    padding: $gap / 14 $gap / 7;
+    background: $color-base-light;
+    border-radius: $gap / 7;
+}
+
+small {
+    font-size: $font-size-small;
+}
+
+sup {
+    @include t-text-offset(
+        -.5em,
+        0,
+        $font-size * 0.75
+    );
+}
+
+sub {
+    @include t-text-offset(
+        .25em,
+        0,
+        $font-size * 0.75
+    );
+}
+
+abbr {
+    cursor: help;
+    @include t-bordered-text(
+        1px,
+        dotted,
+        $color-base
+    );
+}
+
+mark {
+    @include t-highlighted-block();
+}
+
+code {
+    @include t-highlighted-block($backgroundColor: $color-base-light);
+    font-family: $font-mono;
+}
+
+pre {
+    @include t-codeblock();
+    white-space: pre;
+}
+
+.#{$baseClassNamePrefix}-pre {
+    @include t-codeblock(
+        $paddingX: $gap,
+        $paddingY: $gap / 2
+    );
+
+    p, span {
+        white-space: pre;
+        margin: 0;
+        display: block;
+    }
+}

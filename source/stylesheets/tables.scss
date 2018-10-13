@@ -1,0 +1,93 @@
+table {
+    border-collapse: collapse;
+    margin: $gap 0;
+
+    caption {
+        $lineHeight: $font-size * 1.25;
+
+        text-align: center;
+        line-height: $lineHeight;
+        font-size: $font-size;
+        padding: (($gap - $lineHeight) / 2) 0;
+        font-style: italic;
+    }
+
+    &.#{$baseClassNamePrefix}-table {
+        &-full {
+            width: 100%;
+        }
+
+        &-stripped {
+            tbody > tr {
+                &:nth-child(even) {
+                    background-color: $color-table-background-stripped;
+                }
+            }
+        }
+    }
+
+    tr {
+        &:last-child {
+            td {
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+
+    td,
+    th {
+        padding: $gap / 4 $gap / 2 ($gap / 4 - 1) $gap / 2;
+    }
+
+    th {
+        background-color: $color-table-background-head;
+        border-right: 1px solid $color-table-border-head;
+        border-bottom: 1px solid $color-table-border-head;
+        font-weight: 500;
+        font-size: inherit;
+    }
+
+    td {
+        border-right: 1px solid $color-table-border-body;
+        border-bottom: 1px solid $color-table-border-body;
+        &:last-child {
+            border-right: 1px solid transparent;
+        }
+    }
+
+    thead {
+        td,
+        th {
+            background-color: $color-table-background-head;
+            border-right: 1px solid $color-table-border-head;
+            border-bottom: 1px solid $color-table-border-head;
+            font-weight: bolder;
+            font-size: inherit;
+        }
+    }
+
+    tfoot {
+        td {
+            border-right: 1px solid $color-table-border-foot;
+            border-bottom: 1px solid $color-table-border-foot;
+        }
+
+        tr:last-child {
+            td {
+                border-bottom: 1px solid $color-table-border-foot;
+                background-color: $color-table-background-foot;
+                font-weight: bolder;
+            }
+        }
+    }
+
+    tbody {
+        + tbody {
+            tr:first-child {
+                td {
+                    border-top: $gap / 7 solid $color-table-border-body;
+                }
+            }
+        }
+    }
+}

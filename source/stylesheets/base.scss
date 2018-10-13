@@ -1,0 +1,15 @@
+::selection {
+    background-color: $color-selection;
+}
+
+body
+{
+    margin: 0;
+    padding: $gap;
+    color: $color-base;
+    font-size: $font-size;
+    font-family: $font-sans;
+    line-height: $font-line;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,60 @@
+@import './_fonts.scss';
+@import './_colors.scss';
+@import './_prefixes.scss';
+
+// IMPORTED VARIABLES
+$baseClassNamePrefix: $_t--base-class-prefix;
+
+// - GAPS
+$gap: $_t--line-height;
+$gap-h1-top: 2.5;
+$gap-h1-bottom: 1.5;
+$gap-h2-top: 1.5;
+$gap-h2-bottom: 1;
+$gap-h3-top: 1.5;
+$gap-h3-bottom: 0.5;
+$gap-h4-top: 1;
+$gap-h4-bottom: 0.5;
+$gap-h5-top: 1;
+$gap-h5-bottom: 0.5;
+$gap-h6-top: 1;
+$gap-h6-bottom: 0.5;
+
+// - FONTS
+$font-line: $_t--line-height;
+
+$font-sans: $_t--font-family-sans;
+$font-serif: $_t--font-family-serif;
+$font-mono: $_t--font-family-mono;
+
+$font-size: $_t--font-size;
+$font-size-small: $_t--font-size * .85;
+$font-size-h1: $font-size * 2.25;
+$font-size-h2: $font-size * 1.875;
+$font-size-h3: $font-size * 1.5;
+$font-size-h4: $font-size * 1.25;
+$font-size-h5: $font-size * 1;
+$font-size-h6: $font-size * 1;
+
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
+// - COLORS
+$color-background: white;
+$color-base: $_t--color-default;
+$color-base-light: lighten($color-base, 75%);
+$color-base-lightest: lighten($color-base, 78%);
+$color-link: $_t--color-link;
+
+$color-table-background-head: $color-base-light;
+$color-table-background-stripped: $color-base-lightest;
+$color-table-background-foot: $color-base-light;
+$color-table-border-head: $color-base-light;
+$color-table-border-body: $color-base-light;
+$color-table-border-foot: $color-base-light;
+$color-highlight: $_t--color-highlight;
+$color-accent: $_t--color-accent;
+$color-selection: $_t--color-selection;

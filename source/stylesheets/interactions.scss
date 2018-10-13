@@ -1,0 +1,280 @@
+select {
+    display: inline-block;
+    height: $gap;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    color: $color-base;
+    font-size: $font-size;
+    font-family: $font-sans;
+    line-height: $font-line;
+    background-color: white;
+    border: 1px solid rgba($color-base, 0.25);
+    vertical-align: top;
+
+    &:focus,
+    &:active {
+        background-color: rgba($color-link, .1);
+        border: 1px solid rgba($color-link, 1);
+    }
+}
+
+button {
+    $borderWidth: 1px;
+
+    line-height: $font-line - $borderWidth * 2;
+    color: $color-base;
+    font-size: $font-size;
+    font-family: $font-sans;
+    background-color: $color-background;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    outline: none;
+    border: $borderWidth solid rgba-to-rgb($color-base, $color-background, 25%);
+    padding: $gap / 7 $gap / 2;
+    margin: -($gap / 7) $gap / 4;
+    border-radius: $gap / 7;
+    box-sizing: border-box;
+    @include t-animation();
+
+    &:hover {
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+    }
+
+    &:active,
+    &:focus,
+    .#{$baseClassNamePrefix}-input-active {
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+        border-color: rgba-to-rgb($color-link, $color-background, 100%);
+    }
+
+    &[disabled],
+    &.#{$baseClassNamePrefix}-input-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+        background-color: rgba-to-rgb($color-base, $color-background, 10%);
+    }
+}
+
+input {
+    $borderWidth: 1px;
+
+    line-height: $font-line - $borderWidth * 2;
+    color: $color-base;
+    font-size: $font-size;
+    font-family: $font-sans;
+    background-color: $color-background;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    outline: none;
+    border: $borderWidth solid rgba-to-rgb($color-base, $color-background, 25%);
+    padding: $gap / 7 $gap / 4;
+    margin: -($gap / 7) $gap / 4;
+    border-radius: $gap / 7;
+    box-sizing: border-box;
+    @include t-animation();
+
+    &:hover {
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+    }
+
+    &:active,
+    &:focus,
+    .#{$baseClassNamePrefix}-input-active {
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+        border-color: rgba-to-rgb($color-link, $color-background, 100%);
+    }
+
+    &[type='radio'],
+    &[type='checkbox'] {
+        vertical-align: middle;
+        width: $font-size;
+        height: $font-size;
+        margin-top: -(($font-size - 1) / 2);
+        padding: 0;
+
+        &:focus {
+            + label,
+            + span {
+                background-color: rgba($color-link, .1);
+                padding: $gap / 7 $gap / 4;
+                margin: 0 -($gap / 4);
+                border-radius: $gap / 7;
+            }
+        }
+    }
+
+    &[type='button'],
+    &[type='reset'],
+    &[type='submit'] {
+        margin-left: 0;
+        padding-left: $gap / 2;
+        padding-right: $gap / 2;
+    }
+
+    &[disabled],
+    &.#{$baseClassNamePrefix}-input-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+        background-color: rgba-to-rgb($color-base, $color-background, 10%);
+
+        + label {
+            color: rgba-to-rgb($color-base, $color-background, 75%);
+        }
+    }
+
+    &::placeholder {
+        color: rgba($color-base, 0.25);
+    }
+}
+
+label {
+    font-weight: $font-weight-bold;
+
+    > input {
+        $marginTop: $gap / 2 - ($font-line + ($gap / 7 * 2)) % $gap;
+
+        width: 100%;
+        display: block;
+        margin: $marginTop 0 0 0;
+
+        &[type='checkbox'],
+        &[type='radio'] {
+            display: inline-block;
+            vertical-align: middle;
+            width: $font-size;
+            height: $font-size;
+            margin: -($gap / 7) $gap / 4;
+            margin-top: -(($font-size - 1) / 2);
+            padding: 0;
+        }
+    }
+
+    &.#{$baseClassNamePrefix}-input-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+    }
+}
+
+textarea {
+    $borderWidth: 1px;
+
+    line-height: $font-line - $borderWidth * 2;
+    color: $color-base;
+    font-size: $font-size;
+    font-family: $font-sans;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    outline: none;
+    border: $borderWidth solid rgba($color-base, 0.25);
+    padding: $gap / 7 $gap / 4;
+    margin: -($gap / 7) 0;
+    border-radius: $gap / 7;
+    box-sizing: border-box;
+
+    &:hover {
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+    }
+
+    &:active,
+    &:focus,
+    .#{$baseClassNamePrefix}-input-active {
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+        border: 1px solid rgba-to-rgb($color-link, $color-background, 100%);
+    }
+
+    &[disabled],
+    &.#{$baseClassNamePrefix}-input-disabled {
+        color: rgba-to-rgb($color-base, $color-background, 75%);
+        border-color: rgba-to-rgb($color-base, $color-background, 50%);
+        background-color: rgba-to-rgb($color-base, $color-background, 10%);
+
+        + label {
+            color: rgba-to-rgb($color-base, $color-background, 75%);
+        }
+    }
+
+    &::placeholder {
+        color: rgba($color-base, 0.25);
+    }
+}
+
+fieldset {
+    border: 1px solid rgba-to-rgb($color-base, $color-background, 25%);
+    border-radius: $gap / 7;
+    margin: $gap 0;
+
+    p {
+        margin: 0;
+        margin-bottom: $gap / 2;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    legend {
+        font-size: $font-size;
+        padding: 0 $gap / 2;
+    }
+}
+
+.#{$baseClassNamePrefix}-input-stack {
+    margin: $gap 0;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    border: none;
+
+    button,
+    input,
+    label {
+        border-radius: 0;
+        margin-left: 0;
+        display: block;
+        margin-right: -1px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:first-of-type {
+            border-radius:  $gap / 7 0 0 $gap / 7;
+        }
+
+        &:last-of-type {
+            border-radius: 0 $gap / 7 $gap / 7 0 ;
+        }
+    }
+
+    &__vertical {
+        flex-direction: column;
+
+        button,
+        input,
+        label {
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-bottom: -1px;
+            width: 100%;
+
+            &:first-of-type {
+                border-radius: $gap / 7 $gap / 7 0 0;
+            }
+
+            &:last-of-type {
+                border-radius: 0 0 $gap / 7 $gap / 7 ;
+            }
+        }
+    }
+}
