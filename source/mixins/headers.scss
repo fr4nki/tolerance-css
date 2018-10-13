@@ -11,7 +11,7 @@
 
 @mixin t-header($fontSize, $gapTop, $gapBottom, $lineHeight: 1.166666667) {
     font-size: $fontSize;
-    font-weight: $font-bold;
+    font-weight: $font-weight-bold;
     line-height: $lineHeight * $fontSize;
     margin-top: _t--header-font-offset($fontSize, $lineHeight, $gapTop);
     margin-bottom: $gapBottom * $gap;

@@ -153,8 +153,8 @@
     font-size: $fontSize;
 }
 
-@mixin t-accent-block(
-    $backgroundColor: $color-accent,
+@mixin t-highlighted-block(
+    $backgroundColor: $color-highlight,
     $paddingX: $gap / 4,
     $paddingY: $gap / 7,
     $borderRadius: $gap / 7
@@ -171,7 +171,7 @@
     $paddingY: $gap / 2,
     $borderRadius: $gap / 7
 ) {
-    @include t-accent-block(
+    @include t-highlighted-block(
         $backgroundColor: $backgroundColor,
         $paddingX: $paddingX,
         $paddingY: $paddingY,

@@ -6,7 +6,8 @@ a
 {
     @include t-link($color-link);
 
-    &.t-link {
+    &.#{$baseClassNamePrefix}-link {
+        &-outer[href^="//"],
         &-outer[href^="http://"],
         &-outer[href^="https://"] {
             &:after {
@@ -18,15 +19,39 @@ a
 }
 
 strong,
-b
+b,
+.#{$baseClassNamePrefix}-text-bold,
 {
     font-weight: 700;
 }
 
 em,
-i
+i,
+.#{$baseClassNamePrefix}-text-italic,
 {
     font-style: italic;
+}
+
+.#{$baseClassNamePrefix}-text {
+    &-underline {
+        text-decoration: underline;
+    }
+
+    &-bordered {
+        @include t-bordered-text($borderColor: inherit);
+    }
+
+    &-striked {
+        text-decoration: line-through;
+    }
+
+    &-upper {
+        text-transform: uppercase;
+    }
+
+    &-capitalized {
+        text-transform: capitalize;
+    }
 }
 
 hr
@@ -35,7 +60,7 @@ hr
 }
 
 ins {
-    @include t-bordered-text(1px);
+    @include t-bordered-text();
 }
 
 kbd {
@@ -50,24 +75,36 @@ small {
 }
 
 sup {
-    @include t-text-offset(-.5em, 0, $font-size * 0.75);
+    @include t-text-offset(
+        -.5em,
+        0,
+        $font-size * 0.75
+    );
 }
 
 sub {
-    @include t-text-offset(.25em, 0, $font-size * 0.75);
+    @include t-text-offset(
+        .25em,
+        0,
+        $font-size * 0.75
+    );
 }
 
 abbr {
     cursor: help;
-    @include t-bordered-text(1px, dotted, $color-base);
+    @include t-bordered-text(
+        1px,
+        dotted,
+        $color-base
+    );
 }
 
 mark {
-    @include t-accent-block();
+    @include t-highlighted-block();
 }
 
 code {
-    @include t-accent-block($backgroundColor: $color-base-light);
+    @include t-highlighted-block($backgroundColor: $color-base-light);
     font-family: $font-mono;
 }
 
@@ -76,7 +113,7 @@ pre {
     white-space: pre;
 }
 
-.t-pre {
+.#{$baseClassNamePrefix}-pre {
     @include t-codeblock(
         $paddingX: $gap,
         $paddingY: $gap / 2

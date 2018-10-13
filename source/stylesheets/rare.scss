@@ -1,5 +1,9 @@
 blockquote {
-    @include t-accent-block($paddingX: $gap / 2, $paddingY: $gap / 4);
+    @include t-highlighted-block(
+        $backgroundColor: $color-accent,
+        $paddingX: $gap / 2,
+        $paddingY: $gap / 4
+    );
     margin: $gap 0;
 
     cite {

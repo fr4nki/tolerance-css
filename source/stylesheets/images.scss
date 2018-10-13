@@ -7,7 +7,7 @@ img {
     margin-right: $gap;
     margin-bottom: $gap;
 
-    &.t-image {
+    &.#{$baseClassNamePrefix}-image {
         &-left {
             @include t-image-is-left();
         }
@@ -19,11 +19,11 @@ img {
         &-center {
             @include t-image-is-center();
         }
-    }
 
-    &.t-no {
-        &-round {
-            border-radius: 0;
+        &-no {
+            &-round {
+                border-radius: 0;
+            }
         }
     }
 }
