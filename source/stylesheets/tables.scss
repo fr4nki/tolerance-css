@@ -12,15 +12,55 @@ table {
         font-style: italic;
     }
 
-    &.#{$baseClassNamePrefix}-table {
+    &.#{$baseClassNamePrefix}table {
         &-full {
             width: 100%;
         }
 
-        &-stripped {
+        &-striped,
+        &-striped__horizontal {
             tbody > tr {
                 &:nth-child(even) {
-                    background-color: $color-table-background-stripped;
+                    background-color: $color-table-background-striped;
+                }
+            }
+        }
+
+        &-striped__vertical {
+            tbody > tr > td {
+                &:nth-child(even) {
+                    background-color: $color-table-background-striped;
+                }
+            }
+        }
+
+        &-hoverstriped,
+        &-hoverStriped,
+        &-hoverStriped__horizontal,
+        &-hoverstriped__horizontal {
+            tbody > tr:hover td {
+                background: $color-table-background-striped;
+            }
+        }
+
+        &-hoverStriped__vertical,
+        &-hoverstriped__vertical {
+            overflow: hidden;
+
+            tbody td {
+                position: relative;
+                outline: 0;
+
+                &:hover::after,
+                &:focus::after {
+                    content: '';
+                    height: 15000px;
+                    left: 0;
+                    position: absolute;
+                    top: -5000px;
+                    width: 100%;
+                    z-index: -1;
+                    background-color: $color-table-background-striped;
                 }
             }
         }

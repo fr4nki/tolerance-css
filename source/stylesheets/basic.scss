@@ -6,7 +6,7 @@ a
 {
     @include t-link($color-link);
 
-    &.#{$baseClassNamePrefix}-link {
+    &.#{$baseClassNamePrefix}link {
         &-outer[href^="//"],
         &-outer[href^="http://"],
         &-outer[href^="https://"] {
@@ -20,19 +20,19 @@ a
 
 strong,
 b,
-.#{$baseClassNamePrefix}-text-bold,
+.#{$baseClassNamePrefix}text-bold,
 {
     font-weight: 700;
 }
 
 em,
 i,
-.#{$baseClassNamePrefix}-text-italic,
+.#{$baseClassNamePrefix}text-italic,
 {
     font-style: italic;
 }
 
-.#{$baseClassNamePrefix}-text {
+.#{$baseClassNamePrefix}text {
     &-underline {
         text-decoration: underline;
     }
@@ -113,7 +113,7 @@ pre {
     white-space: pre;
 }
 
-.#{$baseClassNamePrefix}-pre {
+.#{$baseClassNamePrefix}pre {
     @include t-codeblock(
         $paddingX: $gap,
         $paddingY: $gap / 2
