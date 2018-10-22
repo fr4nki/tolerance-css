@@ -1,42 +1,19 @@
-select {
-    display: inline-block;
-    height: $gap;
+select,
+input,
+textarea,
+button,
+.#{$baseClassNamePrefix}button,
+.#{$baseClassNamePrefix}button:visited {
     outline: none;
-    padding: 0;
-    margin: 0;
-    color: $color-base;
     font-size: $font-size;
     font-family: $font-sans;
-    line-height: $font-line;
-    background-color: white;
-    border: 1px solid rgba($color-base, 0.25);
-    vertical-align: top;
-
-    &:focus,
-    &:active {
-        background-color: rgba($color-link, .1);
-        border: 1px solid rgba($color-link, 1);
-    }
-}
-
-button {
-    $borderWidth: 1px;
-
-    line-height: $font-line - $borderWidth * 2;
-    color: $color-base;
-    font-size: $font-size;
-    font-family: $font-sans;
-    background-color: $color-background;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    vertical-align: top;
-    outline: none;
-    border: $borderWidth solid rgba-to-rgb($color-base, $color-background, 25%);
-    padding: $gap / 7 $gap / 2;
-    margin: -($gap / 7) $gap / 4;
+    line-height: $font-line - $border-width * 2;
     border-radius: $gap / 7;
+    background-color: $color-background;
     box-sizing: border-box;
+    display: inline-block;
+    color: $color-base;
+    border: $border-width solid rgba-to-rgb($color-base, $color-background, 25%);
     @include t-animation();
 
     &:hover {
@@ -45,50 +22,36 @@ button {
 
     &:active,
     &:focus,
-    .#{$baseClassNamePrefix}-input-active {
+    .#{$baseClassNamePrefix}input-active,
+    .#{$baseClassNamePrefix}button-active {
         background-color: rgba-to-rgb($color-link, $color-background, 10%);
         border-color: rgba-to-rgb($color-link, $color-background, 100%);
     }
 
     &[disabled],
-    &.#{$baseClassNamePrefix}-input-disabled {
+    &.#{$baseClassNamePrefix}input-disabled,
+    .#{$baseClassNamePrefix}button-disabled {
         color: rgba-to-rgb($color-base, $color-background, 75%);
         border-color: rgba-to-rgb($color-base, $color-background, 50%);
         background-color: rgba-to-rgb($color-base, $color-background, 10%);
+
+        + label {
+            color: rgba-to-rgb($color-base, $color-background, 75%);
+        }
+    }
+}
+
+input,
+textarea {
+    padding: $gap / 7 $gap / 2.5;
+    margin: -($gap / 7) $gap / 4;
+
+    &::placeholder {
+        color: rgba($color-base, 0.25);
     }
 }
 
 input {
-    $borderWidth: 1px;
-
-    line-height: $font-line - $borderWidth * 2;
-    color: $color-base;
-    font-size: $font-size;
-    font-family: $font-sans;
-    background-color: $color-background;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    vertical-align: top;
-    outline: none;
-    border: $borderWidth solid rgba-to-rgb($color-base, $color-background, 25%);
-    padding: $gap / 7 $gap / 4;
-    margin: -($gap / 7) $gap / 4;
-    border-radius: $gap / 7;
-    box-sizing: border-box;
-    @include t-animation();
-
-    &:hover {
-        border-color: rgba-to-rgb($color-base, $color-background, 50%);
-    }
-
-    &:active,
-    &:focus,
-    .#{$baseClassNamePrefix}-input-active {
-        background-color: rgba-to-rgb($color-link, $color-background, 10%);
-        border-color: rgba-to-rgb($color-link, $color-background, 100%);
-    }
-
     &[type='radio'],
     &[type='checkbox'] {
         vertical-align: middle;
@@ -107,29 +70,26 @@ input {
             }
         }
     }
+}
 
-    &[type='button'],
-    &[type='reset'],
-    &[type='submit'] {
-        margin-left: 0;
-        padding-left: $gap / 2;
-        padding-right: $gap / 2;
-    }
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+button,
+&.#{$baseClassNamePrefix}button {
+    margin-left: 0;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+    user-select: none;
+    padding: $gap / 7 $gap / 2;
+    margin: -($gap / 7) $gap / 4;
+}
 
-    &[disabled],
-    &.#{$baseClassNamePrefix}-input-disabled {
-        color: rgba-to-rgb($color-base, $color-background, 75%);
-        border-color: rgba-to-rgb($color-base, $color-background, 50%);
-        background-color: rgba-to-rgb($color-base, $color-background, 10%);
-
-        + label {
-            color: rgba-to-rgb($color-base, $color-background, 75%);
-        }
-    }
-
-    &::placeholder {
-        color: rgba($color-base, 0.25);
-    }
+select {
+    height: $font-line - $border-width * 2 + ($gap / 7 * 2);
+    padding: 0;
+    margin: -($gap / 7) 0;
+    vertical-align: top;
 }
 
 label {
@@ -154,54 +114,8 @@ label {
         }
     }
 
-    &.#{$baseClassNamePrefix}-input-disabled {
+    &.#{$baseClassNamePrefix}input-disabled {
         color: rgba-to-rgb($color-base, $color-background, 75%);
-    }
-}
-
-textarea {
-    $borderWidth: 1px;
-
-    line-height: $font-line - $borderWidth * 2;
-    color: $color-base;
-    font-size: $font-size;
-    font-family: $font-sans;
-    background: transparent;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    vertical-align: top;
-    outline: none;
-    border: $borderWidth solid rgba($color-base, 0.25);
-    padding: $gap / 7 $gap / 4;
-    margin: -($gap / 7) 0;
-    border-radius: $gap / 7;
-    box-sizing: border-box;
-
-    &:hover {
-        border-color: rgba-to-rgb($color-base, $color-background, 50%);
-    }
-
-    &:active,
-    &:focus,
-    .#{$baseClassNamePrefix}-input-active {
-        background-color: rgba-to-rgb($color-link, $color-background, 10%);
-        border: 1px solid rgba-to-rgb($color-link, $color-background, 100%);
-    }
-
-    &[disabled],
-    &.#{$baseClassNamePrefix}-input-disabled {
-        color: rgba-to-rgb($color-base, $color-background, 75%);
-        border-color: rgba-to-rgb($color-base, $color-background, 50%);
-        background-color: rgba-to-rgb($color-base, $color-background, 10%);
-
-        + label {
-            color: rgba-to-rgb($color-base, $color-background, 75%);
-        }
-    }
-
-    &::placeholder {
-        color: rgba($color-base, 0.25);
     }
 }
 
@@ -225,7 +139,7 @@ fieldset {
     }
 }
 
-.#{$baseClassNamePrefix}-input-stack {
+.#{$baseClassNamePrefix}input-stack {
     margin: $gap 0;
     display: flex;
     flex-direction: row;
