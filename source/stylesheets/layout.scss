@@ -1,0 +1,40 @@
+.#{$baseClassNamePrefix}cols,
+.#{$baseClassNamePrefix}rows {
+    display: flex;
+}
+
+.#{$baseClassNamePrefix}cols {
+    margin: 0;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.#{$baseClassNamePrefix}rows {
+    margin: 0;
+    flex-direction: column;
+}
+
+.#{$baseClassNamePrefix}col,
+.#{$baseClassNamePrefix}row {
+    background: red;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.#{$baseClassNamePrefix}col {
+    margin: 0 ($gap-col * $gap) 0 0;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.#{$baseClassNamePrefix}row {
+    margin: 0 0 ($gap-row * $gap) 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

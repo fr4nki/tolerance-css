@@ -7,8 +7,8 @@
   "author": "Anton Krivonos <i@fr4nki.ru>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/parcel serve ./example/index.html",
-    "build": "rimraf ./dist && ./node_modules/.bin/parcel build ./example/index.html --public-url '.'"
+    "start": "./node_modules/.bin/parcel serve ./example/index_layout.html",
+    "build": "rimraf ./dist && ./node_modules/.bin/parcel build ./example/index_layout.html --public-url '.'"
   },
   "dependencies": {},
   "devDependencies": {
