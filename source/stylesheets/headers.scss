@@ -1,5 +1,5 @@
 h1,
-.#{$baseClassNamePrefix}h1
+.#{$base-class-prefix}h1
 {
     @include t-header(
         $fontSize: $font-size-h1,
@@ -7,14 +7,14 @@ h1,
         $gapBottom: $gap-h1-bottom
     );
 
-    + .#{$baseClassNamePrefix}subhead {
+    + .#{$base-class-prefix}subhead {
         margin-top: -($gap-h1-bottom * $gap);
         margin-bottom: $gap-h1-bottom * $gap;
     }
 }
 
 h2,
-.#{$baseClassNamePrefix}h2
+.#{$base-class-prefix}h2
 {
     @include t-header(
         $fontSize: $font-size-h2,
@@ -22,14 +22,14 @@ h2,
         $gapBottom: $gap-h2-bottom
     );
 
-    + .#{$baseClassNamePrefix}subhead {
+    + .#{$base-class-prefix}subhead {
         margin-top: -($gap-h2-bottom * $gap);
         margin-bottom: $gap-h2-bottom * $gap;
     }
 }
 
 h3,
-.#{$baseClassNamePrefix}h3
+.#{$base-class-prefix}h3
 {
     @include t-header(
         $fontSize: $font-size-h3,
@@ -37,14 +37,14 @@ h3,
         $gapBottom: $gap-h3-bottom
     );
 
-    + .#{$baseClassNamePrefix}subhead {
+    + .#{$base-class-prefix}subhead {
         margin-top: -($gap-h3-bottom * $gap);
         margin-bottom: $gap-h3-bottom * $gap;
     }
 }
 
 h4,
-.#{$baseClassNamePrefix}h4
+.#{$base-class-prefix}h4
 {
     @include t-header(
         $fontSize: $font-size-h4,
@@ -52,14 +52,14 @@ h4,
         $gapBottom: $gap-h4-bottom
     );
 
-    + .#{$baseClassNamePrefix}subhead {
+    + .#{$base-class-prefix}subhead {
         margin-top: -($gap-h4-bottom * $gap);
         margin-bottom: $gap-h4-bottom * $gap;
     }
 }
 
 h5,
-.#{$baseClassNamePrefix}h5
+.#{$base-class-prefix}h5
 {
     @include t-header(
         $fontSize: $font-size-h5,
@@ -67,39 +67,39 @@ h5,
         $gapBottom: $gap-h5-bottom
     );
 
-    + .#{$baseClassNamePrefix}subhead {
+    + .#{$base-class-prefix}subhead {
         margin-top: -($gap-h5-bottom * $gap);
         margin-bottom: $gap-h5-bottom * $gap;
     }
 }
 
 h6,
-.#{$baseClassNamePrefix}h6
+.#{$base-class-prefix}h6
 {
     @include t-header(
         $fontSize: $font-size-h6,
         $gapTop: $gap-h6-top,
         $gapBottom: $gap-h6-bottom
     );
-    + .#{$baseClassNamePrefix}subhead {
+    + .#{$base-class-prefix}subhead {
         margin-top: -($gap-h6-bottom * $gap);
         margin-bottom: $gap-h6-bottom * $gap;
     }
 }
 
 h1,
-.#{$baseClassNamePrefix}h1,
+.#{$base-class-prefix}h1,
 h2,
-.#{$baseClassNamePrefix}h2,
+.#{$base-class-prefix}h2,
 h3,
-.#{$baseClassNamePrefix}h3,
+.#{$base-class-prefix}h3,
 h4,
-.#{$baseClassNamePrefix}h4,
+.#{$base-class-prefix}h4,
 h5,
-.#{$baseClassNamePrefix}h5,
+.#{$base-class-prefix}h5,
 h6,
-.#{$baseClassNamePrefix}h6 {
-    + .#{$baseClassNamePrefix}subhead {
+.#{$base-class-prefix}h6 {
+    + .#{$base-class-prefix}subhead {
         font-size: $font-size-small;
     }
 

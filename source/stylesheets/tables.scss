@@ -12,7 +12,7 @@ table {
         font-style: italic;
     }
 
-    &.#{$baseClassNamePrefix}table {
+    &.#{$base-class-prefix}table {
         &-full {
             width: 100%;
         }
