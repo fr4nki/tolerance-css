@@ -6,7 +6,7 @@ a
 {
     @include t-link($color-link);
 
-    &.#{$baseClassNamePrefix}link {
+    &.#{$base-class-prefix}link {
         &-outer[href^="//"],
         &-outer[href^="http://"],
         &-outer[href^="https://"] {
@@ -20,19 +20,19 @@ a
 
 strong,
 b,
-.#{$baseClassNamePrefix}text-bold,
+.#{$base-class-prefix}text-bold,
 {
     font-weight: 700;
 }
 
 em,
 i,
-.#{$baseClassNamePrefix}text-italic,
+.#{$base-class-prefix}text-italic,
 {
     font-style: italic;
 }
 
-.#{$baseClassNamePrefix}text {
+.#{$base-class-prefix}text {
     &-underline {
         text-decoration: underline;
     }
@@ -104,7 +104,9 @@ mark {
 }
 
 code {
-    @include t-highlighted-block($backgroundColor: $color-base-light);
+    @include t-highlighted-block(
+        $backgroundColor: $color-base-light
+    );
     font-family: $font-mono;
 }
 
@@ -113,7 +115,7 @@ pre {
     white-space: pre;
 }
 
-.#{$baseClassNamePrefix}pre {
+.#{$base-class-prefix}pre {
     @include t-codeblock(
         $paddingX: $gap,
         $paddingY: $gap / 2

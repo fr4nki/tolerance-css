@@ -2,8 +2,8 @@ select,
 input,
 textarea,
 button,
-.#{$baseClassNamePrefix}button,
-.#{$baseClassNamePrefix}button:visited {
+.#{$base-class-prefix}button,
+.#{$base-class-prefix}button:visited {
     outline: none;
     font-size: $font-size;
     font-family: $font-sans;
@@ -22,15 +22,15 @@ button,
 
     &:active,
     &:focus,
-    .#{$baseClassNamePrefix}input-active,
-    .#{$baseClassNamePrefix}button-active {
+    .#{$base-class-prefix}input-active,
+    .#{$base-class-prefix}button-active {
         background-color: rgba-to-rgb($color-link, $color-background, 10%);
         border-color: rgba-to-rgb($color-link, $color-background, 100%);
     }
 
     &[disabled],
-    &.#{$baseClassNamePrefix}input-disabled,
-    .#{$baseClassNamePrefix}button-disabled {
+    &.#{$base-class-prefix}input-disabled,
+    .#{$base-class-prefix}button-disabled {
         color: rgba-to-rgb($color-base, $color-background, 75%);
         border-color: rgba-to-rgb($color-base, $color-background, 50%);
         background-color: rgba-to-rgb($color-base, $color-background, 10%);
@@ -76,7 +76,7 @@ input[type='button'],
 input[type='reset'],
 input[type='submit'],
 button,
-&.#{$baseClassNamePrefix}button {
+&.#{$base-class-prefix}button {
     margin-left: 0;
     padding-left: $gap / 2;
     padding-right: $gap / 2;
@@ -114,7 +114,7 @@ label {
         }
     }
 
-    &.#{$baseClassNamePrefix}input-disabled {
+    &.#{$base-class-prefix}input-disabled {
         color: rgba-to-rgb($color-base, $color-background, 75%);
     }
 }
@@ -139,7 +139,7 @@ fieldset {
     }
 }
 
-.#{$baseClassNamePrefix}input-stack {
+.#{$base-class-prefix}input-stack {
     margin: $gap 0;
     display: flex;
     flex-direction: row;

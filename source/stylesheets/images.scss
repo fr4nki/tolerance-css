@@ -7,7 +7,7 @@ img {
     margin-right: $gap;
     margin-bottom: $gap;
 
-    &.#{$baseClassNamePrefix}image {
+    &.#{$base-class-prefix}image {
         &-left {
             @include t-image-is-left();
         }

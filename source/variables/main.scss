@@ -3,7 +3,7 @@
 @import './_prefixes.scss';
 
 // IMPORTED VARIABLES
-$baseClassNamePrefix: $_t--base-class-prefix;
+$base-class-prefix: $_t--base-class-prefix;
 
 // - GAPS
 $gap: $_t--line-height;
@@ -19,6 +19,11 @@ $gap-h5-top: 1;
 $gap-h5-bottom: 0.5;
 $gap-h6-top: 1;
 $gap-h6-bottom: 0.5;
+$gap-col: 1;
+$gap-row: 1;
+
+// - COLUMNS
+$columns-max-quantity: 12;
 
 // - BORDERS
 $border-width: 1px;
