@@ -29,6 +29,12 @@
     &:last-child {
         margin-right: 0;
     }
+
+    @for $counter from 1 through $columns-max-quantity {
+        &-size-#{$counter} {
+            flex: $counter 1 0;
+        }
+    }
 }
 
 .#{$base-class-prefix}row {

@@ -104,7 +104,9 @@ mark {
 }
 
 code {
-    @include t-highlighted-block($backgroundColor: $color-base-light);
+    @include t-highlighted-block(
+        $backgroundColor: $color-base-light
+    );
     font-family: $font-mono;
 }
 
