@@ -20,17 +20,20 @@ button,
         border-color: rgba-to-rgb($color-base, $color-background, 50%);
     }
 
+    &:focus {
+        box-shadow: 0 0 0 2px rgba-to-rgb($color-link, $color-background, 25%);
+        border-color: rgba-to-rgb($color-link, $color-background, 100%);
+    }
+
     &:active,
-    &:focus,
-    .#{$base-class-prefix}input-active,
-    .#{$base-class-prefix}button-active {
-        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+    &.#{$base-class-prefix}input-active,
+    &.#{$base-class-prefix}button-active {
         border-color: rgba-to-rgb($color-link, $color-background, 100%);
     }
 
     &[disabled],
     &.#{$base-class-prefix}input-disabled,
-    .#{$base-class-prefix}button-disabled {
+    &.#{$base-class-prefix}button-disabled {
         color: rgba-to-rgb($color-base, $color-background, 75%);
         border-color: rgba-to-rgb($color-base, $color-background, 50%);
         background-color: rgba-to-rgb($color-base, $color-background, 10%);
@@ -39,19 +42,42 @@ button,
             color: rgba-to-rgb($color-base, $color-background, 75%);
         }
     }
+
+    &.#{$base-class-prefix}input-error {
+        border-color: $color-error;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba-to-rgb($color-error, $color-background, 25%);
+        }
+    }
+
+    &.#{$base-class-prefix}type {
+        &-square {
+            border-radius: 0;
+        }
+
+        &-round {
+            border-radius: $font-line - $border-width * 2;
+        }
+    }
 }
 
 input,
 textarea {
     padding: $gap / 7 $gap / 2.5;
-    margin: -($gap / 7) $gap / 4;
 
     &::placeholder {
         color: rgba($color-base, 0.25);
     }
 }
 
+textarea {
+    margin: 0 $gap;
+}
+
 input {
+    margin: -($gap / 7) $gap / 4;
+
     &[type='radio'],
     &[type='checkbox'] {
         vertical-align: middle;
@@ -61,9 +87,11 @@ input {
         padding: 0;
 
         &:focus {
+            box-shadow: none;
+
             + label,
             + span {
-                background-color: rgba($color-link, .1);
+                background-color: rgba-to-rgb($color-link, $color-background, 10%);
                 padding: $gap / 7 $gap / 4;
                 margin: 0 -($gap / 4);
                 border-radius: $gap / 7;
@@ -83,6 +111,12 @@ button,
     user-select: none;
     padding: $gap / 7 $gap / 2;
     margin: -($gap / 7) $gap / 4;
+
+    &:active,
+    &.#{$base-class-prefix}input-active,
+    &.#{$base-class-prefix}button-active {
+        background-color: rgba-to-rgb($color-link, $color-background, 10%);
+    }
 }
 
 select {

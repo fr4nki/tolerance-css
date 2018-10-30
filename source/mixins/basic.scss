@@ -182,3 +182,11 @@
     margin: $gap 0;
     overflow: auto;
 }
+
+@mixin t-textsize(
+    $fontSize: $font-size,
+    $lineHeight: $font-line
+) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+}

@@ -90,13 +90,67 @@ sub {
     );
 }
 
-abbr {
+abbr,
+.#{$base-class-prefix}text-tooltip {
     cursor: help;
     @include t-bordered-text(
         1px,
         dotted,
         $color-base
     );
+
+}
+
+.#{$base-class-prefix}text-tooltip {
+    position: relative;
+
+    &:after {
+        @include t-textsize($font-size-small, $font-line);
+
+        content: attr(data-tooltip);
+        display: none;
+        position: absolute;
+        background: $color-base;
+        color: $color-background;
+        padding: $gap / 28 $gap / 4;
+        border-radius: $gap / 7;
+        white-space: nowrap;
+    }
+
+    &__side {
+        &-left:after {
+            top: 50%;
+            left: -$gap / 4;
+            transform: translate(-100%, -$font-line / 2);
+        }
+
+        &-right:after {
+            top: 50%;
+            right: -$gap / 4;
+            transform: translate(100%, -$font-line / 2);
+        }
+
+        &-top:after {
+            top: -($gap / 7 + $font-line + $gap / 28);
+            transform: translateX(-50%);
+            margin-left: 50%;
+            left: 0;
+        }
+
+        &-bottom:after {
+            bottom: -($gap / 7 + $font-line + $gap / 28);
+            transform: translateX(-50%);
+            margin-left: 50%;
+            left: 0;
+        }
+    }
+
+    &:focus,
+    &:hover {
+        &:after {
+            display: block;
+        }
+    }
 }
 
 mark {
@@ -118,12 +172,32 @@ pre {
 .#{$base-class-prefix}pre {
     @include t-codeblock(
         $paddingX: $gap,
-        $paddingY: $gap / 2
+        $paddingY: $gap / 4 * 3
     );
 
-    p, span {
+    p,
+    span {
         white-space: pre;
         margin: 0;
         display: block;
+    }
+}
+
+
+.#{$base-class-prefix}font-size {
+    &-small {
+        @include t-textsize($font-size-small, $font-line);
+    }
+
+    &-normal {
+        @include t-textsize($font-size, $font-line);
+    }
+
+    &-double {
+        @include t-textsize($font-size * 2, $font-line * 2);
+    }
+
+    &-triple {
+        @include t-textsize($font-size * 3, $font-line * 3);
     }
 }

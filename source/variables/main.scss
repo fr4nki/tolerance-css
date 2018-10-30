@@ -36,7 +36,7 @@ $font-serif: $_t--font-family-serif;
 $font-mono: $_t--font-family-mono;
 
 $font-size: $_t--font-size;
-$font-size-small: $_t--font-size * .85;
+$font-size-small: $font-size * .85;
 $font-size-h1: $font-size * 2.25;
 $font-size-h2: $font-size * 1.875;
 $font-size-h3: $font-size * 1.5;
@@ -65,3 +65,4 @@ $color-table-border-foot: $color-base-light;
 $color-highlight: $_t--color-highlight;
 $color-accent: $_t--color-accent;
 $color-selection: $_t--color-selection;
+$color-error: $_t--color-error;
