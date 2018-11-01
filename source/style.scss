@@ -1,8 +1,8 @@
 // DEBUG
 @import './debug/debug.scss';
 
-// GLOBAL VARIABLES
-@import './variables/main.scss';
+// THEME
+@import './theme.scss';
 
 // MIXINS
 @import './mixins/animation.scss';
@@ -12,6 +12,7 @@
 
 // STYLES
 @import './stylesheets/base.scss';
+@import './stylesheets/screen.scss';
 @import './stylesheets/layout.scss';
 @import './stylesheets/basic.scss';
 @import './stylesheets/headers.scss';

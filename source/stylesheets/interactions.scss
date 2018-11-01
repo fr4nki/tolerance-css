@@ -21,7 +21,7 @@ button,
     }
 
     &:focus {
-        box-shadow: 0 0 0 2px rgba-to-rgb($color-link, $color-background, 25%);
+        box-shadow: 0 0 0 2px rgba($color-link, 0.25);
         border-color: rgba-to-rgb($color-link, $color-background, 100%);
     }
 
