@@ -39,8 +39,6 @@ $gap-h5-top: 1;
 $gap-h5-bottom: 0.5;
 $gap-h6-top: 1;
 $gap-h6-bottom: 0.5;
-$gap-col: 1;
-$gap-row: 1;
 
 // - COLUMNS
 $columns-max-quantity: 12;
@@ -64,3 +62,11 @@ $color-highlight: $_t--color-highlight;
 $color-accent: $_t--color-accent;
 $color-selection: $_t--color-selection;
 $color-error: $_t--color-error;
+
+// - MEDIA
+$screen-extrasmall: 576px;
+$screen-small: 768px;
+$screen-medium: 990px;
+$screen-big: 1200px;
+$screen-huge: 1600px;
+$screen-extrahuge: 1920px;

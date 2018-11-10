@@ -93,7 +93,10 @@
         border-bottom-color: opacify($linkHover, 1);
     }
 
-    &:focus,
+    &:focus {
+        border-bottom: 1px solid rgba($linkActive, 1);
+    }
+
     &:active {
         background-color: rgba($linkActive, .1);
         border-bottom: 1px solid rgba($linkActive, 1);

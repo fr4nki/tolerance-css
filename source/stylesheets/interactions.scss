@@ -16,6 +16,15 @@ button,
     border: $border-width solid rgba-to-rgb($color-base, $color-background, 25%);
     @include t-animation();
 
+    p & {
+        margin: 0;
+    }
+
+
+    &::-moz-focus-inner {
+        border: none;
+    }
+
     &:hover {
         border-color: rgba-to-rgb($color-base, $color-background, 50%);
     }
@@ -72,7 +81,8 @@ textarea {
 }
 
 textarea {
-    margin: 0 $gap;
+    margin: $gap 0;
+    max-width: 100%;
 }
 
 input {

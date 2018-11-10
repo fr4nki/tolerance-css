@@ -1,46 +1,28 @@
-.#{$base-class-prefix}cols,
 .#{$base-class-prefix}rows {
-    display: flex;
+    @include t-rows($margin: $gap 0);
 }
+
+.#{$base-class-prefix}row {
+    @include t-row();
+}
+
 
 .#{$base-class-prefix}cols {
-    margin: 0;
-    flex-direction: row;
-    max-width: 100%;
-}
-
-.#{$base-class-prefix}rows {
-    margin: 0;
-    flex-direction: column;
-}
-
-.#{$base-class-prefix}col,
-.#{$base-class-prefix}row {
-    background: red;
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+    @include t-cols(
+        $margin: 0,
+        $maxWidth: 100%
+    );
 }
 
 .#{$base-class-prefix}col {
-    margin: 0 ($gap-col * $gap) 0 0;
-
-    &:last-child {
-        margin-right: 0;
-    }
+    @include t-col(
+        $size: 1,
+        $margin: $gap,
+    );
 
     @for $counter from 1 through $columns-max-quantity {
         &-size-#{$counter} {
             flex: $counter 1 0;
         }
-    }
-}
-
-.#{$base-class-prefix}row {
-    margin: 0 0 ($gap-row * $gap) 0;
-
-    &:last-child {
-        margin-bottom: 0;
     }
 }
