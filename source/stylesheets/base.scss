@@ -5,7 +5,7 @@
 body
 {
     margin: 0;
-    padding: $gap;
+    padding: $gap-body-vertical $gap-body-horizontal;
     color: $color-base;
     font-size: $font-size;
     font-family: $font-sans;

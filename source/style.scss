@@ -7,12 +7,14 @@
 // MIXINS
 @import './mixins/animation.scss';
 @import './mixins/basic.scss';
+@import './mixins/blocks.scss';
 @import './mixins/layout.scss';
 @import './mixins/headers.scss';
 @import './mixins/images.scss';
 
 // STYLES
 @import './stylesheets/base.scss';
+@import './stylesheets/blocks.scss';
 @import './stylesheets/screen.scss';
 @import './stylesheets/layout.scss';
 @import './stylesheets/basic.scss';

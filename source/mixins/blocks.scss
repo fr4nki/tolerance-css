@@ -1,0 +1,19 @@
+@mixin t-fullscreen(
+    $padding: $gap
+) {
+    display: flex;
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+    overflow-x: hidden;
+    padding: $padding;
+    box-sizing: border-box;
+}
+
+@mixin t-block(
+    $margin: $gap,
+    $padding: $gap
+) {
+    margin: $margin;
+    padding: $padding;
+}

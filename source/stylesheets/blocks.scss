@@ -1,0 +1,65 @@
+.#{$base-class-prefix}fullscreen {
+    @include t-fullscreen($gap);
+
+    &-align {
+        &__center,
+        &__center-middle {
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__center-start {
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &__center-end {
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        &__top,
+        &__top-middle {
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        &__top-start {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &__top-end {
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+
+        &__bottom,
+        &__bottom-middle {
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        &__bottom-start {
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+
+        &__bottom-end {
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+    }
+
+    body > & {
+        margin: $gap (-$gap-body-horizontal) $gap (-$gap-body-horizontal);
+    }
+
+    body + & {
+        margin: (-$gap-body-vertical) (-$gap-body-horizontal) $gap (-$gap-body-horizontal);
+    }
+}
+
+.#{$base-class-prefix}block {
+    @include t-block($margin: $gap 0, $padding: $gap 0);
+}
